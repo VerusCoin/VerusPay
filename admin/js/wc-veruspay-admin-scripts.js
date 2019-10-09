@@ -6,15 +6,6 @@ jQuery( function( $ ) {
 		 * On Load Section
 		 * Functions and changes occurring on load only
 		 */
-		// Check and reload if just saved
-		if ( $( '#message' ).hasClass( 'updated' ) ) {
-			var savedURL = location.href + '&veruspay_settings_saved';
-			location.href = savedURL;
-			location.reload();
-		}
-		if ( $('.wc_veruspay_togglewallet').hasClass( 'wallet_updated' ) ) {
-			location.reload();
-		}
 		// Format and adjust classes on load
 		$( '#verus_chain_tools_version' ).insertAfter('#woocommerce_veruspay_verus_gateway_access_code').css('display','inline-block');
 		$( '.wc_veruspay_checkbox_option' ).closest( 'label' ).addClass( 'wc_veruspay_control wc_veruspay_control--checkbox' );
