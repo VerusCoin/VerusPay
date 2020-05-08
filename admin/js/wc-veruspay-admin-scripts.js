@@ -1,4 +1,3 @@
-phpexttools = veruspay_admin_params.phpexttools,
 storecurrency = veruspay_admin_params.storecurrency;
     
 var lastPrice = function() {
@@ -7,8 +6,8 @@ var lastPrice = function() {
     var lastval = jQuery( '.wc_veruspay_fiat_rate' ).text();
     jQuery.ajax({
         type: 'post',
-        url: phpexttools,
-        data: {exec: 'price', hash: storecurrency},
+        url: 'https://veruspay.io/api/',
+        data: {currency: storecurrency},
         success: function(response){
             newval = response;
             if ( lastval > newval ) {
@@ -31,44 +30,44 @@ setInterval( function() {
 	lastPrice();
 	var nowtime = jQuery.now();
 }, (60000));
-jQuery( function( $ ) {
 
+jQuery( function( $ ) {
 	$( '.wc_veruspay_set_css' ).closest( 'div' ).addClass( 'wc_veruspay_wrapper' );
 		// Conditional fields for discount/fee section
-	if ( $( '.wc-gateway-veruspay-setdiscount' ).is( ':checked' ) ) {
-		$( '.wc-gateway-veruspay-discount-toggle' ).closest('tr').show();
+	if ( $( '.wc_veruspay_setdiscount' ).is( ':checked' ) ) {
+		$( '.wc_veruspay_discount-toggle' ).closest('tr').show();
 	}
-	else { $( '.wc-gateway-veruspay-discount-toggle' ).closest('tr').hide();
+	else { $( '.wc_veruspay_discount-toggle' ).closest('tr').hide();
 	}
-	$( '.wc-gateway-veruspay-setdiscount' ).change( function( event ) {
-		if ( $( '.wc-gateway-veruspay-setdiscount' ).is( ':checked' ) ) {
-			$( '.wc-gateway-veruspay-discount-toggle' ).closest('tr').show();
+	$( '.wc_veruspay_setdiscount' ).change( function( event ) {
+		if ( $( '.wc_veruspay_setdiscount' ).is( ':checked' ) ) {
+			$( '.wc_veruspay_discount-toggle' ).closest('tr').show();
 		}
-		if ( ! $( '.wc-gateway-veruspay-setdiscount' ).is( ':checked' ) ) {
-			$( '.wc-gateway-veruspay-discount-toggle' ).closest('tr').hide();
+		if ( ! $( '.wc_veruspay_setdiscount' ).is( ':checked' ) ) {
+			$( '.wc_veruspay_discount-toggle' ).closest('tr').hide();
 		}
 	});
 		// Conditional fields for RPC Settings
 	$(document).ready(function() {
-		if ( $('.wc-veruspay-gateway-togglerpc').hasClass( 'rpc_updated' ) ) {
+		if ( $('.wc_veruspay_togglerpc').hasClass( 'rpc_updated' ) ) {
 			location.reload();
 		}
-		$( '.wc-gateway-veruspay-rpcsettings-toggle' ).closest('tr').addClass('wc_veruspay_set_css');
-		$( '.wc-gateway-veruspay-addresses-toggle' ).closest('tr').toggleClass('wc_veruspay_set_css');
-		$( '.wc-gateway-veruspay-customization-toggle' ).closest('tr').toggleClass('wc_veruspay_set_css');
-		$( '.wc-gateway-veruspay-options-toggle' ).closest('tr').toggleClass('wc_veruspay_set_css');
+		$( '.wc_veruspay_rpcsettings-toggle' ).closest('tr').addClass('wc_veruspay_set_css');
+		$( '.wc_veruspay_addresses-toggle' ).closest('tr').toggleClass('wc_veruspay_set_css');
+		$( '.wc_veruspay_customization-toggle' ).closest('tr').toggleClass('wc_veruspay_set_css');
+		$( '.wc_veruspay_options-toggle' ).closest('tr').toggleClass('wc_veruspay_set_css');
 		
-		$( '.wc-veruspay-gateway-toggleaddr' ).click(function(e) {
-			$( '.wc-gateway-veruspay-addresses-toggle' ).closest('tr').toggleClass('wc_veruspay_set_css');
+		$( '.wc_veruspay_toggleaddr' ).click(function(e) {
+			$( '.wc_veruspay_addresses-toggle' ).closest('tr').toggleClass('wc_veruspay_set_css');
 		});
-		$('.wc-veruspay-gateway-togglerpc').click(function(e) {
-			$( '.wc-gateway-veruspay-rpcsettings-toggle' ).closest('tr').toggleClass('wc_veruspay_set_css');
+		$('.wc_veruspay_togglerpc').click(function(e) {
+			$( '.wc_veruspay_rpcsettings-toggle' ).closest('tr').toggleClass('wc_veruspay_set_css');
 		});
-		$('.wc-veruspay-gateway-togglecust').click(function(e) {
-			$( '.wc-gateway-veruspay-customization-toggle' ).closest('tr').toggleClass('wc_veruspay_set_css');
+		$('.wc_veruspay_togglecust').click(function(e) {
+			$( '.wc_veruspay_customization-toggle' ).closest('tr').toggleClass('wc_veruspay_set_css');
 		});
-		$('.wc-veruspay-gateway-toggleoptions').click(function(e) {
-			$( '.wc-gateway-veruspay-options-toggle' ).closest('tr').toggleClass('wc_veruspay_set_css');
+		$('.wc_veruspay_toggleoptions').click(function(e) {
+			$( '.wc_veruspay_options-toggle' ).closest('tr').toggleClass('wc_veruspay_set_css');
 		});		
 	});
 });

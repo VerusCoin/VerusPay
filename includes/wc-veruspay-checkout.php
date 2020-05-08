@@ -1,18 +1,13 @@
 <?php 
 /**
- * Plugin Name: VerusPay Verus Gateway
- * Plugin URI: https://github.com/joliverwestbrook/VerusPay/
- * Description: Accept Verus Coin (VRSC) cryptocurrency in your online WooCommerce store for physical or digital products.
- * Author: J Oliver Westbrook
- * Author URI: https://github.com/joliverwestbrook/
- * Copyright: (c) 2019 John Oliver Westbrook (johnwestbrook@pm.me)
- * Version: 0.1.1-a
- * Text Domain: wc-gateway-veruspay
- * Domain Path: /i18n/languages/
+ * VerusPay Verus Gateway Checkout
  *
- * @package   WC-Gateway-Verus
+ * Checkout page.
+ *
+ * @package VerusPay Verus Gateway\Checkout
+ * @version 0.1.2
  * @author    J Oliver Westbrook
- * @category  Admin
+ * @category  Cryptocurrency
  * @copyright Copyright (c) 2019, John Oliver Westbrook
  * 
  * ====================
