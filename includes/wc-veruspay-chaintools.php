@@ -229,7 +229,7 @@ function wc_veruspay_price( $chain, $currency ) {
  */
 function wc_veruspay_qr( $qraddress, $size ) {
     $alt_text = 'Send VRSC to ' . $qraddress;
-    return "\n" . '<img src="https://api.qrserver.com/v1/create-qr-code/?data=' . $qraddress . ';size=200x200'. '" alt="' . $alt_text . '" title="" />' . "\n";
+    return "\n" . '<img src="https://api.qrserver.com/v1/create-qr-code/?data=' . $qraddress . '&amp;size=200x200'. '" alt="' . $alt_text . '" title="" />' . "\n";
 }//  return "\n" . '<img src="https://api.qrserver.com/v1/create-qr-code/?data=HelloWorld&amp;size=100x100" alt="" title="" />' . "\n";
 /**
  * cURL Get
