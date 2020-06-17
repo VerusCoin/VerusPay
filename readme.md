@@ -1,4 +1,4 @@
-=== VerusPay Verus Gateway ===
+# === VerusPay Verus Gateway ===
 
 Contributors: veruspay, joliverwestbrook
 Donate link: https://veruspay.io/donate/
