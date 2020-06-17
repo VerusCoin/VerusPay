@@ -80,7 +80,7 @@ Manual Mode is always a "fallback", even for Live Mode operation, but also allow
 4. Activate the plugin through the **Plugins** menu in WordPress
 5. Go to **WooCommerce &gt; Settings &gt; Checkout** or **WooCommerce &gt; Settings &gt; Payments** in newer versions, and select "VerusPay" to configure
 
-=== Verus Wallet Installation ===
+#### === Verus Wallet Installation ===
 
 1. From the web server in an SSH session first get the dependencies with: `sudo apt --yes install build-essential pkg-config libc6-dev m4 g++-multilib autoconf libtool ncurses-dev unzip git python python-zmq zlib1g-dev wget libcurl4-openssl-dev bsdmainutils automake curl`
 2. Next, get the latest version of Verus CLI for Linux here: `https://github.com/VerusCoin/VerusCoin/releases/latest`
