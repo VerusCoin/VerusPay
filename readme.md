@@ -43,7 +43,6 @@ License URI: https://opensource.org/licenses/MIT
 
 **Requires: WooCommerce 2.1+**
 
-- Download the latest release for WordPress here: https://veruspay.io/latest/
 - Build a WordPress plugin zip: Clone the source into a folder called "veruspay-woocommerce" or similar. Zip that folder and upload as a plugin within WordPress.  NOTE: if you download a Zip from Github you will need to extract the folder within, then create a zip from that folder before installing.
 
 This plugin extends WooCommerce, adding the ability to accept cryptocurrency payments in Verus Coin (VRSC) using either an on-store wallet daemon (best for VPS or dedicated hosting stores) or manually configured VRSC addresses (best for shared hosting stores).
@@ -53,7 +52,7 @@ When an order is submitted via the VerusPay gateway, the order will be placed "o
 VerusPay uses limited API functionality for Manual Mode, to communicate with the blockchain explorer in verifying payments and with the veruspay.io API to get up-to-date price data.  These API's do not receive any private data either about the store owner, store, or customer.  The only data sent to the block explorer API is the public/transparent blockchain transaction and address used.  For VerusPay.io API price data, only the store-set currency is sent to retrieve the current fiat exchange rate for Verus Coin.
 
 API's in use:
-1 - https://veruspay.io/api/
+1 - https://veruspay.veruscoin.io
 2 - https://explorer.veruscoin.io
 
 === More Details ===
@@ -77,7 +76,7 @@ Manual Mode is always a "fallback", even for Live Mode operation, but also allow
 
 1. If you need help setting up WordPress, follow this guide for your OS: https://www.digitalocean.com/community/tutorials/how-to-install-wordpress-with-lamp-on-ubuntu-18-04
 2. Be sure you're running WooCommerce 2.1+ in your store. THIS MUST BE INSTALLED, ACTIVATED, AND CONFIGURED FIRST.
-3. Install the latest .zip release file, found at `/releases/latest` of the github repo (or create a zip from a cloned folder of the repo), at **Plugins &gt; Add New &gt; Upload**
+3. Install the VerusPay Plugin into the Wordpress plugins folder (create a zip from a cloned folder of the repo), at **Plugins &gt; Add New &gt; Upload**
 4. Activate the plugin through the **Plugins** menu in WordPress
 5. Go to **WooCommerce &gt; Settings &gt; Checkout** or **WooCommerce &gt; Settings &gt; Payments** in newer versions, and select "VerusPay" to configure
 
@@ -86,8 +85,17 @@ Manual Mode is always a "fallback", even for Live Mode operation, but also allow
 1. From the web server in an SSH session first get the dependencies with: `sudo apt --yes install build-essential pkg-config libc6-dev m4 g++-multilib autoconf libtool ncurses-dev unzip git python python-zmq zlib1g-dev wget libcurl4-openssl-dev bsdmainutils automake curl`
 2. Next, get the latest version of Verus CLI for Linux here: `https://github.com/VerusCoin/VerusCoin/releases/latest`
 3. Unzip the file in your server's home directory with: `tar -xvf Verus-CLI-Linux-version.tar.gz`
-4. For faster install, create the VRSC hidden directory and download the latest Verus bootstrap. Create the directory with: `mkdir -p .komodo/VRSC` and download and unzip the bootstrap into that directory: `wget https://bootstrap.0x03.services/veruscoin/VRSC-bootstrap.tar.gz`
-5. Install the Zcash params, from within your home directory with: `./verus-cli/fetch-params`
+4. For faster install, create the VRSC hidden directory and download the latest Verus bootstrap. Create the directory with: 
+
+   `mkdir -p .komodo/VRSC`
+   `cd ~/.komodo/VRSC`
+   `wget https://bootstrap.0x03.services/veruscoin/VRSC-bootstrap.tar.gz`
+   `tar -xvf bootstrap.0x03.services/veruscoin/VRSC-bootstrap.tar.gz`
+  
+5. Install the Zcash params, from within your home directory with: 
+   `cd ~/verus-cli`
+   
+   `./fetch-params`
 6. After this completes, you can start the daemon which will begin syncing and create a new Verus wallet for your store with: `./verus-cli/verusd -daemon`
 
 === Configuration of VerusPay ===
