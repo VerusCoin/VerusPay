@@ -1,3 +1,4 @@
+
 # === VerusPay Verus Gateway ===
 
 Contributors: veruspay, joliverwestbrook
@@ -12,8 +13,8 @@ Tested WooCommerce up to: 3.5.5
 License: MIT
 License URI: https://opensource.org/licenses/MIT
 
- * ====================
- * 
+
+ ```
  * The MIT License (MIT)
  * 
  * Copyright (c) 2019 John Oliver Westbrook
@@ -37,10 +38,10 @@ License URI: https://opensource.org/licenses/MIT
  * THE SOFTWARE.
  * 
  * ====================
-
+```
 === Description ===
 
-> **Requires: WooCommerce 2.1+**
+**Requires: WooCommerce 2.1+**
 
 - Download the latest release for WordPress here: https://veruspay.io/latest/
 - Build a WordPress plugin zip: Clone the source into a folder called "veruspay-woocommerce" or similar. Zip that folder and upload as a plugin within WordPress.  NOTE: if you download a Zip from Github you will need to extract the folder within, then create a zip from that folder before installing.
@@ -183,4 +184,10 @@ Bug fixes
 
 = 0.1.1 =
 Add QR Invoice functionality
-
+```mermaid
+graph LR
+A[Square Rect] -- Link text --> B((Circle))
+A --> C(Round Rect)
+B --> D{Rhombus}
+C --> D
+```
