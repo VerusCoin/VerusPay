@@ -39,7 +39,7 @@ License URI: https://opensource.org/licenses/MIT
  * 
  * ====================
 ```
-=== Description ===
+#### === Description ===
 
 **Requires: WooCommerce 2.1+**
 
@@ -55,7 +55,7 @@ API's in use:
 1 - https://veruspay.veruscoin.io
 2 - https://explorer.veruscoin.io
 
-=== More Details ===
+#### === More Details ===
  - Learn about the [Verus Coin official site](https://veruscoin.io) for more information about the community project
  - Join the [Verus Coin Discord](https://discord.gg/VRKMP2S) for support. 
  - More documentation coming in a next release.
